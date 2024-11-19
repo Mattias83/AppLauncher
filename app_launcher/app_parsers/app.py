@@ -1,7 +1,14 @@
-class App:
+import gi
+
+gi.require_version("Gtk", "4.0")
+from gi.repository import GObject
+
+
+class App(GObject.GObject):
     def __init__(
         self, name: str, exec: str, app_type: str, app_provider: str, icon: str = ""
     ) -> None:
+        super().__init__()
         self.name = name
         self.exec = exec
         self.app_type = app_type
