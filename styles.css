@@ -9,3 +9,20 @@ entry.search {
     border-radius: 5px;
     padding: 5px;
 }
+
+
+/* Gör ListView transparent */
+listview {
+    background-color: transparent;
+    color: black;
+}
+
+listview>row {
+    /* turn off transition effect when navigating */
+    transition: none;
+    font-size: 24px;
+}
+
+listview>row:selected {
+    background-color: green;
+}
