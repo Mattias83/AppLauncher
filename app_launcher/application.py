@@ -4,6 +4,7 @@ gi.require_version("Gtk", "4.0")
 from gi.repository import Gtk, Gdk, Gio, GLib
 
 from app_launcher.windows.main_window import MainWindow
+from app_launcher.actions.keyboard_inputs import create_keyboard_actions
 
 
 class Application(Gtk.Application):
@@ -13,6 +14,7 @@ class Application(Gtk.Application):
             **kwargs,
         )
         self.load_css()
+        create_keyboard_actions(self)
 
     def load_css(self) -> None:
         css_provider = Gtk.CssProvider()
