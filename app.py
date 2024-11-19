@@ -1,6 +1,6 @@
 import sys
 
-from app_launcher import Application
+from app_launcher.application import Application
 
 
 def main() -> None:
