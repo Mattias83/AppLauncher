@@ -3,11 +3,16 @@ window {
 }
 
 entry.search {
-    background-color: #181010;
+    background-color: transparent;
     color: #ece8e8;
-    border: 1px solid #c4dd24;
-    border-radius: 5px;
-    padding: 5px;
+    border: none;
+    outline: none;
+    padding: 20px;
+    font-size: 24px;
+}
+
+entry {
+    border-radius: 0;
 }
 
 
@@ -24,5 +29,5 @@ listview>row {
 }
 
 listview>row:selected {
-    background-color: green;
+    background-color: rgba(94, 92, 92, .5);
 }
