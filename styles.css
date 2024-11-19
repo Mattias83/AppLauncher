@@ -1,3 +1,11 @@
 window {
     background-color: rgba(219, 30, 30, 0.4);
 }
+
+entry.search {
+    background-color: #181010;
+    color: #ece8e8;
+    border: 1px solid #c4dd24;
+    border-radius: 5px;
+    padding: 5px;
+}
