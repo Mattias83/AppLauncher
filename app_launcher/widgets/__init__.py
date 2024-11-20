@@ -61,14 +61,23 @@ class Widgets:
         return factory
 
     def setup_factory(self, factory, list_item):
-        # list_item.get_style_context().add_class("list-row")
         label = Gtk.Label()
-        label.set_xalign(0)  # Justera texten till vänster
-        list_item.set_child(label)
+        icon = Gtk.Image()
+        box = Gtk.Box(spacing=8)
+        box.append(icon)
+        box.append(label)
+        label.set_xalign(0)
+        list_item.set_child(box)
 
     def bind_factory(self, factory, list_item):
         item = list_item.get_item()
-        label = list_item.get_child()
+        box = list_item.get_child()
+        icon = box.get_first_child()
+        icon.set_from_icon_name(item.icon)
+        if item.app_provider != "Gnome":
+            icon.set_from_file(item.icon)
+        icon.set_pixel_size(32)
+        label = box.get_last_child()
         label.set_text(item.name)
 
     def filter_func(self, item, filter_data):
