@@ -33,3 +33,9 @@ listview>row:selected {
     background-color: rgba(94, 92, 92, .5);
     transition: none;
 }
+
+.app-config {
+    background-color: #c4dd24;
+    border: 3px solid green;
+    font-size: 28px;
+}
