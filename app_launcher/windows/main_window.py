@@ -16,6 +16,6 @@ class MainWindow(Gtk.ApplicationWindow):
         super().__init__(application=app)
         self.set_title("AppLauncher")
         self.set_modal(True)
-        self.set_default_size(800, 400)
+        self.set_default_size(800, 420)
         self.set_resizable(False)
         self.widgets = Widgets(self)  # building ui
