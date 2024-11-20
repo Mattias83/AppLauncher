@@ -34,6 +34,12 @@ def create_keyboard_actions(app: "Application") -> None:
     app.add_action(keyboard_down_action)
     app.set_accels_for_action("app.keyboard_down", ["Down"])
 
+    # skapa en action för att öpnna modalen med F2
+    open_modal_action = Gio.SimpleAction.new("open_modal", None)
+    open_modal_action.connect("activate", on_open_modal_action, app)
+    app.add_action(open_modal_action)
+    app.set_accels_for_action("app.open_modal", ["F2"])
+
 
 def on_escape_action(action, param, app: "Application") -> None:
     app.quit()
@@ -64,3 +70,12 @@ def on_keyboard_down(action, param, app) -> None:
         app.window.widgets.list_view.scroll_to(
             selected_app_row_index + 1, Gtk.ListScrollFlags.NONE, None
         )
+
+
+def on_open_modal_action(action, param, app) -> None:
+    win = app.get_active_window()
+    if win:
+        from app_launcher.windows.app_config_modal import AppConfigModal
+
+        modal = AppConfigModal(win, app)
+        modal.present()
