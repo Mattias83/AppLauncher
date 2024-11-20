@@ -15,8 +15,7 @@ entry {
     border-radius: 0;
 }
 
-
-/* Gör ListView transparent */
+/* Make ListView transparent */
 listview {
     background-color: transparent;
     color: black;
