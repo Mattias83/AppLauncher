@@ -30,3 +30,4 @@ def on_escape_action(action, param, app: "Application") -> None:
 def on_enter_action(action, param, app):
     # TODO
     app.window.widgets.selection_model.get_selected_item().execute()
+    app.quit()
