@@ -41,15 +41,12 @@ class Widgets:
 
         # Selection Model
         self.selection_model = Gtk.SingleSelection.new(self.sort_model)
-        self.selection_model.set_can_unselect(
-            False
-        )  # förhindra avmarkering av alla objekt
+        self.selection_model.set_can_unselect(False)
 
         # ListView
         self.list_view = Gtk.ListView.new(self.selection_model, self.create_factory())
         self.list_view.set_vexpand(True)
         self.list_view.set_show_separators(False)
-
         self.scrolled_window.set_child(self.list_view)
 
         window.set_child(window_box)
@@ -91,19 +88,19 @@ class Widgets:
         name1 = item1.name.lower()
         name2 = item2.name.lower()
 
-        # Prioritera exakt matchning
+        # Prioritize exact matching
         if name1 == search_text:
             return -1
         if name2 == search_text:
             return 1
 
-        # Prioritera om namnet börjar med söktexten
+        # Prioritize if name starts with the search text
         if name1.startswith(search_text) and not name2.startswith(search_text):
             return -1
         if not name1.startswith(search_text) and name2.startswith(search_text):
             return 1
 
-        # Sortera alfabetiskt
+        # Sort alphabetically
         return (name1 > name2) - (name1 < name2)
 
     def on_search_changed(self, entry):

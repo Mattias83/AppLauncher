@@ -27,7 +27,7 @@ class AppConfigModal(Gtk.Window):
         return False
 
     def build_ui(self) -> None:
-        # fixa ui senare TODO
+        # TODO
         selected_app_row = self.app.window.widgets.selection_model.get_selected_item()
         label = Gtk.Label(label=selected_app_row.name)
         self.set_child(label)
