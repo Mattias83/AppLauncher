@@ -24,10 +24,12 @@ listview {
 
 listview>row {
     /* turn off transition effect when navigating */
-    transition: none;
     font-size: 24px;
+    /* transition effect applied to outline, change it or remove it */
+    outline: none;
 }
 
 listview>row:selected {
     background-color: rgba(94, 92, 92, .5);
+    transition: none;
 }
