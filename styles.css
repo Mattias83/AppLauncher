@@ -24,7 +24,8 @@ listview {
 
 listview>row {
     /* turn off transition effect when navigating */
-    font-size: 24px;
+    font-family: "FiraCode Nerd Font Mono", serif;
+    font-size: 28px;
     /* transition effect applied to outline, change it or remove it */
     outline: none;
 }
